@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="quadrant">
+            <form action="/processdynamicform" method="post" class="quadrant">
+                <select name="language">
+                    <option value="selection">Select Programming Language</option>
+                    <option>Python</option>
+                    <option>C</option>
+                    <option>Java</option>
+                    <option>C#</option>
+                    <option>JavaScript</option>
+                </select>
+                <button type = "submit">Submit Language</button>
+
+            </form>
+           
+        </div>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
