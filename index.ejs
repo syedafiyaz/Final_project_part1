@@ -13,16 +13,26 @@
 
     <main>
         <div class="quadrant">
-            <form action="/processdynamicform" method="post" class="quadrant">
-                <select name="language">
-                    <option value="selection">Select Programming Language</option>
-                    <option>Python</option>
-                    <option>C</option>
-                    <option>Java</option>
-                    <option>C#</option>
-                    <option>JavaScript</option>
-                </select>
-                <button type = "submit">Submit Language</button>
+
+           <!-- to list the programing laguages from API to create the dropdown -->
+            <form action="/processdynamicform" method="POST" class="quadrant">
+                                              
+                <label for="languages">Select Programming Language:</label>
+                <select name="Selected language" id="Selected language">
+                    <% if (languages) { %>
+                        <% languages.forEach(function(language){ %>
+                        <!-- option using js to create the dropdown by language name-->
+                            <option value=<%=language.name %> >
+                                <%=language.name %>
+                            </option>
+                        
+                        
+                        <% }); %>
+                    <% } %>
+                </select>        
+                <br><br>
+                <!-- using the submit button to apply for the result on the next.ejs page-->
+                <input type = "submit">
 
             </form>
            
