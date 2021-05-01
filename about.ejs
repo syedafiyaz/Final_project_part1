@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="quadrant">
+
+            <!-- to display the list of all language in readable format--> 
+            <form action="/processdynamicform" method="POST" class="quadrant">
+            <h1>Most Programming Languages</h1>
+            <p>Welcome to the programming World.</p>
+            <p>Here are the most used this days.</p>
+            <ul>
+                <% if (languages) { %>
+                    <% languages.forEach(function(language){ %>
+                        <li>
+                            <strong><%=language.name %></strong><p>, <%= language.createdAt %>, <%=language.createdBy %>, <%=language.marketSharePercent %>, <%=language.typingDisciplines %>.</p>
+                            
+                        </li>
+                    <% }); %>
+                <% } %>
+            </ul>
+
+            </form>
+
+        </div>
+ 
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
