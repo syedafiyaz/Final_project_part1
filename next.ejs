@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <!-- print the result selected-->
+        <p> Thank you for your option. You submitted:</p>
+        <!-- print the content of the form submission using EJS -->
+
+        <%=JSON.stringify(body)%>
+         
+        <br><br>
+        <!-- a button to allow to go back to previous page-->
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

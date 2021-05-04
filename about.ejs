@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="totalcard">
+
+            <!-- to display the list of all movies of friend in readable format--> 
+            <form action="/processdynamicform" method="POST" class="totalcard">
+            <h1>Friendly Movies Page</h1>
+            <p>Welcome to the movies list of friends.</p>
+            
+            <ul>
+                <% movielists.forEach(function(movielist) { %>
+                    <li>
+                        <strong><%= movielist.friendid %></strong>
+                        <%= movielist.movie1 %>, <%= movielist.movie2 %>, <%= movielist.movie3 %>, <%= movielist.movie4 %>, <%= movielist.movie5 %>, <%= movielist.movie6 %>, <%= movielist.movie7 %>, <%= movielist.movie8 %>, <%= movielist.movie9 %>, <%= movielist.movie10 %>
+                    </li>
+                <% }); %>
+            </ul>
+
+            </form>
+            <br><br>
+
+            <form>
+                <input type="button" value="Go back!" onclick="history.back()">
+            </form>
+
+        </div>
+ 
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

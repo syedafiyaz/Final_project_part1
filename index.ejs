@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+</head>
+<body class="totalcard">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="totalcard">
+            <h1>Welcome to Friendly Night Movies Page</h1>
+            <p>Choose your friends you would like <br>to watch movies with here.</p>
+
+           <!-- to the friends page from API to create the friends selection -->
+            <form action="/processdynamicform" method="POST" class="totalcard">
+                                              
+                <% friends.forEach(function(friend) { %>
+                    <div>
+                        <div>
+                            <strong><%= friend.firstname %> </strong>
+                        </div>
+                        <input type="checkbox" name=<%=friend.firstname %>>
+                    </div>
+                <% }); %>
+                <br><br>    
+                <input type="submit">
+                
+
+            </form>
+           
+        </div>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
